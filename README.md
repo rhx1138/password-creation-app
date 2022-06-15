@@ -3,10 +3,10 @@
 
 Password Creation App is a web app designed to generate passwords for users
 
-* This passord generator allows users to select criteria for password
-* The password can be between 8 up to 128 characters long
-* It can allow the user to select lowercase, uppercase, numeric, and/or special characters
-* Generating the password is as simple as clicking on the button
+* This passord generator allows users to select criteria for a password.
+* The password can be between 8 and 128 characters long.
+* It can allow the user to select lowercase, uppercase, numeric, and/or special characters.
+* Generating the password is as simple as clicking the button.
 
 [Password Creation App Website](password-creation-app.netlify.app)
 
