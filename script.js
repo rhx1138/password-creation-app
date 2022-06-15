@@ -14,13 +14,13 @@ let confirmLength = "";
 function generatePassword() {
   let confirmLength = (prompt("Choose between 8-128 characters."));
 
-// continues to loop until user selects correct char amount
+  // continues to loop until user selects correct char amount
   while (confirmLength <= 7 || confirmLength > 128) {
     alert("Password must be between 8-128 characters");
     confirmLength = (prompt("How many characters do you want your password to have?"));
   }
-// the error in line 20 was due to trying to assign confirmLength again even though I had already defined it.
- 
+  // the error in line 20 was due to trying to assign confirmLength again even though I had already defined it.
+
   // get parameters from user  
   let confirmSpecialChar = confirm("Click OK if you want special characters");
   let confirmNumericChar = confirm("Click OK if you want numeric characters");
@@ -28,9 +28,18 @@ function generatePassword() {
   let confirmAlphaUpper = confirm("Click OK if you want uppercase characters");
   // may need to loop if answer is outside the parameters or possible screen refresh
   // still printing 'undefined' to the output; possible message there
+  // confirmSpecialChar && confirmNumericChar && confirmAlphaLower && confirmAlphaUpper === undefined // 
   
-
+// while statement needed to be after the passwordCharacters value was declared, now password creation app fully operational
   let passwordCharacters = []
+
+  while (passwordCharacters.length === 0) {
+    alert("You must select at least one option");
+    confirmSpecialChar = confirm("Click OK if you want special characters");
+    confirmNumericChar = confirm("Click OK if you want numeric characters");
+    confirmAlphaLower = confirm("Click OK if you want lowercase characters");
+    confirmAlphaUpper = confirm("Click OK if you want uppercase characters");
+  }
 
   if (confirmSpecialChar) {
     passwordCharacters = passwordCharacters.concat(specialChar)
@@ -51,7 +60,7 @@ function generatePassword() {
   console.log(passwordCharacters)
 
 
-   // Empty string filled based on for loop selecting random chars from the array
+  // Empty string filled based on for loop selecting random chars from the array
   let randomPassword = "";
 
   for (let i = 0; i < confirmLength; i++) {
