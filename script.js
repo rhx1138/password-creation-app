@@ -30,17 +30,10 @@ function generatePassword() {
   // still printing 'undefined' to the output; possible message there
   // confirmSpecialChar && confirmNumericChar && confirmAlphaLower && confirmAlphaUpper === undefined // 
   
-// while statement needed to be after the passwordCharacters value was declared, now password creation app fully operational
+
   let passwordCharacters = []
 
-  while (passwordCharacters.length === 0) {
-    alert("You must select at least one option");
-    confirmSpecialChar = confirm("Click OK if you want special characters");
-    confirmNumericChar = confirm("Click OK if you want numeric characters");
-    confirmAlphaLower = confirm("Click OK if you want lowercase characters");
-    confirmAlphaUpper = confirm("Click OK if you want uppercase characters");
-  }
-
+  
   if (confirmSpecialChar) {
     passwordCharacters = passwordCharacters.concat(specialChar)
   }
@@ -55,7 +48,13 @@ function generatePassword() {
 
   if (confirmAlphaUpper) {
     passwordCharacters = passwordCharacters.concat(alphaUpper)
-  }
+  } 
+
+  if (passwordCharacters.length === 0) {
+    alert("You must choose at least one option, please click the GENERATE button")
+  } 
+
+  //an alert was added to notify user must start over and choose at least one option
 
   console.log(passwordCharacters)
 
