@@ -1,5 +1,3 @@
-
-
 // Get references to the #generate element
 let generateBtn = document.querySelector("#generate");
 
@@ -14,24 +12,26 @@ let confirmLength = "";
 
 // Prompt to confirm how many characters the user would like in their password
 function generatePassword() {
-  let confirmLength = (prompt("How many characters would you like your password to contain?"));
+  let confirmLength = (prompt("Choose between 8-60 characters."));
 
   // will continue to loop if not within parameters 
   while (confirmLength <= 7 || confirmLength >= 60) {
     alert("Password must be between 8-60 characters");
-    let confirmLength = (prompt("How many characters would you like your password to contain?"));
+    let confirmLength = (prompt("How many characters do you want your password to have?"));
   }
 
   // get parameters from user  
-  let confirmSpecialChar = confirm("Click OK if you would like to include special characters");
-  let confirmNumericChar = confirm("Click OK if you would like to include numeric characters");
-  let confirmAlphaLower = confirm("Click OK if you would like to include lowercase characters");
-  let confirmAlphaUpper = confirm("Click OK if you would like to include uppercase characters");
+  let confirmSpecialChar = confirm("Click OK if you want special characters");
+  let confirmNumericChar = confirm("Click OK if you want numeric characters");
+  let confirmAlphaLower = confirm("Click OK if you want lowercase characters");
+  let confirmAlphaUpper = confirm("Click OK if you want uppercase characters");
   // may need to loop if answer is outside the parameters or possible screen refresh
   // still printing 'undefined' to the output; possible message there
-  
+
 
   let passwordCharacters = []
+
+
 
   if (confirmSpecialChar) {
     passwordCharacters = passwordCharacters.concat(specialChar)
@@ -51,6 +51,10 @@ function generatePassword() {
 
   console.log(passwordCharacters)
 
+
+  // want this to be a case statement if possible or else if
+
+
   // Empty string filled based on for loop selecting random chars from the array
   let randomPassword = "";
 
@@ -59,6 +63,7 @@ function generatePassword() {
     console.log(randomPassword)
   }
   return randomPassword;
+
 }
 
 
