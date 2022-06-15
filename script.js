@@ -12,14 +12,15 @@ let confirmLength = "";
 
 // Prompt to confirm how many characters the user would like in their password
 function generatePassword() {
-  let confirmLength = (prompt("Choose between 8-60 characters."));
+  let confirmLength = (prompt("Choose between 8-128 characters."));
 
-  // will continue to loop if not within parameters 
-  while (confirmLength <= 7 || confirmLength >= 60) {
-    alert("Password must be between 8-60 characters");
+// continues to loop until user selects correct char amount
+  while (confirmLength <= 7 || confirmLength > 128) {
+    alert("Password must be between 8-128 characters");
     let confirmLength = (prompt("How many characters do you want your password to have?"));
   }
 
+ 
   // get parameters from user  
   let confirmSpecialChar = confirm("Click OK if you want special characters");
   let confirmNumericChar = confirm("Click OK if you want numeric characters");
@@ -27,7 +28,7 @@ function generatePassword() {
   let confirmAlphaUpper = confirm("Click OK if you want uppercase characters");
   // may need to loop if answer is outside the parameters or possible screen refresh
   // still printing 'undefined' to the output; possible message there
-
+  
 
   let passwordCharacters = []
 
