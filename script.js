@@ -17,9 +17,9 @@ function generatePassword() {
 // continues to loop until user selects correct char amount
   while (confirmLength <= 7 || confirmLength > 128) {
     alert("Password must be between 8-128 characters");
-    let confirmLength = (prompt("How many characters do you want your password to have?"));
+    confirmLength = (prompt("How many characters do you want your password to have?"));
   }
-
+// the error in line 20 was due to trying to assign confirmLength again even though I had already defined it.
  
   // get parameters from user  
   let confirmSpecialChar = confirm("Click OK if you want special characters");
