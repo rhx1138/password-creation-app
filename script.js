@@ -32,8 +32,6 @@ function generatePassword() {
 
   let passwordCharacters = []
 
-
-
   if (confirmSpecialChar) {
     passwordCharacters = passwordCharacters.concat(specialChar)
   }
@@ -53,10 +51,7 @@ function generatePassword() {
   console.log(passwordCharacters)
 
 
-  // want this to be a case statement if possible or else if
-
-
-  // Empty string filled based on for loop selecting random chars from the array
+   // Empty string filled based on for loop selecting random chars from the array
   let randomPassword = "";
 
   for (let i = 0; i < confirmLength; i++) {
