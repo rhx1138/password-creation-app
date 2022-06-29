@@ -1,5 +1,5 @@
 # password-creation-app #
-## Challenge 3 Description ##
+## Application Description ##
 
 Password Creation App is a web app designed to generate passwords for users
 
